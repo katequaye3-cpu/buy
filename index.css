@@ -1,160 +1,195 @@
-@font-face {
-    font-family: 'Radjhani_SB';
-    src: url('./Font_Faces/Rajdhani-SemiBold.ttf');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f0f0f, #1f1f1f);
+  --card-bg: rgba(255,255,255,0.05);
+  --card-border: rgba(255,255,255,0.15);
+  --accent-white: #ffffff;
+  --text-light: #ececec;
 }
 
-@font-face {
-    font-family: 'Radjhani_L';
-    src: url('./Font_Faces/Rajdhani-Regular.ttf');
-}
-
-
-body{
-
- background-size: cover;
- background-attachment: fixed;
- background-repeat: no-repeat;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-light);
   display: flex;
-  height: 100vh;
-  
-}
-.heading{
-    font-family: 'Radjhani_L';
-    display: flex;
-    position: relative;
-    left: 2%;
-    font-size: 30px;
-    padding-bottom: 20px;
-    padding: 20px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-
-
-.control-panel{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    top: 5%;
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.control-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
 }
 
-.control-panel .form-group input{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    font-family: 'Courier New', Courier, monospace;
+/* IMAGE PLACEHOLDER */
+.image-placeholder {
+  width: 100%;
+  height: 140px;
+  background: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
 }
 
-input{
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    backdrop-filter: blur(2px);
-    background-color: rgba(255, 255, 255, 0.2);
-    color: rgb(0, 0, 0);
+.heading h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--accent-white);
 }
 
-
-label{
-    font-family: 'Radjhani_SB';
+.form-group {
+  margin-bottom: 1rem;
 }
 
-.control-panel .checkbox_group{
-    margin: 0px;
-    display: flex;
-    width: 150px;
-    justify-content: space-between;
-
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-light);
 }
 
-.checkbox_group{
-    padding: 5px;
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[readonly] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: var(--text-light);
+  font-size: 1rem;
+  transition: border-color 0.3s, background 0.3s;
 }
 
-
-
-button {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    padding: 12px 50px;
-    font-size: 20px;
-    font-family: 'Radjhani_SB';
-    font-style: italic;
-    border: none;
-    border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+input:focus {
+  outline: none;
+  border-color: var(--accent-white);
+  background: rgba(255,255,255,0.15);
 }
 
-button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: black;
+.checkbox_group {
+  display: flex;
+  gap: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-    .control-panel {
-        padding: 3%;
-        top: 2%;
-    }
-
-    .heading {
-        font-size: 24px;
-        text-align: center;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .control-panel .form-group input {
-        width: 100%;
-    }
-
-    label {
-        font-size: 0.9rem;
-    }
-
-    .checkbox_group {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    button {
-        padding: 10px 30px;
-        font-size: 18px;
-    }
+.checkbox_group label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
 }
 
-@media screen and (max-width: 480px) {
-    body {
-        flex-direction: column;
-        height: auto;
-    }
+input[type="radio"] {
+  accent-color: var(--accent-white);
+  width: 1.2rem;
+  height: 1.2rem;
+}
 
-    .heading {
-        font-size: 20px;
-        padding: 10px;
-    }
+.btn-pay {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent-white);
+  color: #0f0f0f;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
 
-    input {
-        font-size: 14px;
-    }
+.btn-pay:hover {
+  background: rgba(255,255,255,0.8);
+  transform: translateY(-2px);
+}
 
-    .control-panel {
-        padding: 2%;
-    }
+/* MODAL STYLES */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
 
-    button {
-        width: 100%;
-        font-size: 16px;
-    }
+.modal-content {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  width: 90%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+
+.modal-content h2 {
+  color: var(--accent-white);
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.ref-box {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-button {
+  background: var(--accent-white);
+  color: #0f0f0f;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.copy-button:hover {
+  background: rgba(255,255,255,0.8);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+@media (max-width: 480px) {
+  .control-panel { padding: 1.5rem; }
+  .heading h1 { font-size: 1.6rem; }
+  .btn-pay { font-size: 1rem; }
 }
